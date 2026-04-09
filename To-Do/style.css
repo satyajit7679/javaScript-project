@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Card */
+.To-do {
+  width: 400px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #7b5cff, #5a3df0);
+  color: white;
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input Section */
+.To-do-input {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+}
+
+.To-do-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.To-do-input button {
+  background: #7b5cff;
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.To-do-input button:hover {
+  background: #5a3df0;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 20px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter {
+  cursor: pointer;
+  color: #777;
+  font-size: 14px;
+}
+
+.filter.active {
+  color: #7b5cff;
+  font-weight: bold;
+  border-bottom: 2px solid #7b5cff;
+  padding-bottom: 5px;
+}
+
+/* Todo List */
+.todos-container {
+  padding: 20px;
+  text-align: center;
+}
+
+#todo-list {
+  list-style: none;
+}
+
+/* Empty State */
+.empty-state {
+  color: #aaa;
+}
+
+.empty-state i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+.footer button {
+  background: none;
+  border: none;
+  color: #7b5cff;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  text-decoration: underline;
+}
+
+/* Todo Item (for future JS use) */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.todo-item-text {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+}
