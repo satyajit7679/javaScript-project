@@ -17,11 +17,14 @@ body{
 
 .left{
     width: 25vw;
-    padding: 14px;
+    padding: 10px;
 }
 
 .right{
-    width: 75vw;  
+    width: 75vw; 
+    max-height: 100vh;
+    overflow: scroll; 
+    position: relative;
 }
 .home{
     padding: 10px;
@@ -47,6 +50,7 @@ body{
     gap: 13px;
     position: absolute;
     bottom: 0;
+    padding: 14px 0;
 }
 
 .footer a{
@@ -71,8 +75,131 @@ body{
     width: 25px;
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(99, 99, 105);
+    height: 60px;
+    border-radius: 10px;
+}
+
+.header > *{
+    padding: 10px;
+}
+
+.right{
+    margin: 14px 0;
+}
 
 
+.spotify-playlist{
+    padding: 10px;
+}
 
+.card-cointainer{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
 
+.card{
+    width: 150px;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: rgb(68, 69, 69);
+    position: relative;
+}
 
+.card > *{
+    padding-top: 10px;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.play {
+    position: absolute;
+    top: 110px;
+    right: 24px;
+    width: 40px;
+    height: 30px;
+    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play svg {
+    width: 50px;
+    height: 50px;
+    fill: rgb(8, 228, 41);
+    
+}
+
+/* Optional hover effect */
+.play:hover {
+    transform: scale(1.1);
+}
+
+.button > *{
+    margin: 0 8px;
+}
+
+.signupbtn{
+    font-weight: bold;
+    background-color: rgb(20, 20, 26);
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 21px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.signupbtn:hover{
+    color: white;
+    font-size: 17px;
+}
+
+.loginbtn{
+    font-weight: bold;
+    background-color: rgb(20, 20, 26);
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 21px;
+    font-size: 16px;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.loginbtn:hover{
+    color: white;
+    font-size: 17px;
+}
+
+.spotify-playlist{
+    
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(61, 78, 78);
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.songbtn{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
