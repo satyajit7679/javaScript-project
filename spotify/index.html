@@ -26,6 +26,9 @@
             <h2>Your library</h2>
             <img class="invert" src="./svg/library.svg" alt="library logo" />
           </div>
+          <div class="songList">
+            <ul></ul>
+          </div>
           <div class="footer">
             <div>
               <a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a>
@@ -124,13 +127,21 @@
             </div>
           </div>
           <div class="playbar">
+            <div class="seekbar">
+              <div class="circle">
+                
+              </div>
+            </div>
+            <div class="abovebar">
             <div class="songinfo"></div>
+            
             <div class="songbtn">
-              <img src="./svg/previous.svg" alt="previous song">
-              <img src="./svg/play.svg" alt="play">
-              <img src="./svg/next.svg" alt="next song">
+              <img id="previous" src="./svg/previous.svg" alt="previous song" />
+              <img id="play" src="./svg/play.svg" alt="play" />
+              <img id="next" src="./svg/next.svg" alt="next song" />
             </div>
             <div class="songtime"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -138,3 +149,4 @@
     </div>
   </body>
 </html>
+

@@ -189,17 +189,142 @@ body{
     
 }
 
-.playbar{
-    position: absolute;
-    bottom: 0;
-    background-color: rgb(61, 78, 78);
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
+.playbar {
+    position: fixed;
+    bottom: 40px;
+    left: 63%;
+    transform: translateX(-50%);
+
+    width: 70vw;
+    height: 80px;              /* ✅ increase height */
+
+    background-color: rgb(176, 196, 196);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 10px 15px;
+    box-sizing: border-box;    
 }
 
-.songbtn{
+/* song name */
+.songinfo {
+    width: 30%;                 
+    text-align: left;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* buttons */
+.songbtn {
+    width: 40%;                
     display: flex;
     justify-content: center;
     gap: 16px;
 }
+
+.songbtn img {
+    cursor: pointer;
+}
+
+/* seekbar inside playbar */
+.seekbar {
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* circle */
+.circle {
+    height: 12px;
+    width: 12px;
+    background-color: red;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    transition: left 0.2s;
+}
+
+.songinfo,
+.songtime {
+    filter: invert(1);
+    min-width: 0;
+}
+
+.abovebar {
+    display: flex;
+    align-items: center;
+}
+
+.songList{
+    height: 400px;
+    overflow: auto;
+    margin-bottom: 40px 0;
+}
+
+.songList ul{
+    padding: 0 25px;
+}
+
+.songList ul li{
+    list-style: decimal;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 5px;
+    flex-wrap: wrap;          
+    word-break: break-word;
+}
+
+.playNow{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.playNow span{
+    font-size: 20px;
+    width: 40px;
+    padding: 12px;
+}
+
+
+.songList ul li {
+    list-style: decimal;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px;
+    border: 1px solid white;
+    margin: 12px 0;
+    border-radius: 5px;
+
+    /* FIXES */
+    align-items: center;
+}
+
+.songList ul li span {
+    flex: 1;              /* take remaining space */
+    min-width: 0;         /* IMPORTANT for flex overflow fix */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  /* remove this if you want multi-line */
+}
+
+
+
