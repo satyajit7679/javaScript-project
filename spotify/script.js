@@ -1,3 +1,11 @@
+function formatTime(seconds) {
+  seconds = Math.floor(seconds);
+
+  const minutes = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+
+  return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+}
 
 async function getSongs() {
   // Fetch songs from your server/folder
@@ -24,18 +32,20 @@ async function getSongs() {
 
 let currentSong = new Audio();
 
-const playMusic = (track) => {
+const playMusic = (track, pause = false) => {
   if (!track) {
     console.error("No track provided");
     return;
   }
 
   currentSong.src = `/spotify/songs/${track}`; // fix path if needed
-  currentSong.play();
-  play.src = "./svg/pause.svg"
+  if (!pause) {
+    currentSong.play();
+    play.src = "./svg/pause.svg";
+  }
   let currSongName = decodeURIComponent(track).replace(".mp3", "");
-  document.querySelector(".songinfo").innerHTML = `${currSongName}`
-  document.querySelector(".songtime").innerHTML = ` 00 / 00`
+  document.querySelector(".songinfo").innerHTML = `${currSongName}`;
+  document.querySelector(".songtime").innerHTML = ` 00 / 00`;
 
   console.log("Playing:", decodeURIComponent(track));
 };
@@ -43,6 +53,7 @@ const playMusic = (track) => {
 async function main() {
   let songUL = document.querySelector(".songList ul");
   let songs = await getSongs();
+  playMusic(songs[0], true);
   let html = "";
 
   for (const song of songs) {
@@ -72,17 +83,32 @@ async function main() {
 
   // Attach an eventlistener for play,previous and next
 
-  play.addEventListener("click", () =>{
-    if(currentSong.paused){
-        currentSong.play()
-        play.src = "./svg/pause.svg"
+  play.addEventListener("click", () => {
+    if (currentSong.paused) {
+      currentSong.play();
+      play.src = "./svg/pause.svg";
     } else {
-        currentSong.pause()
-        play.src = "./svg/play.svg"
+      currentSong.pause();
+      play.src = "./svg/play.svg";
     }
-  })
+  });
+  // listen for time update event
+  currentSong.addEventListener("timeupdate", () => {
+    if (!isNaN(currentSong.duration)) {
+      document.querySelector(".songtime").innerHTML =
+        `${formatTime(currentSong.currentTime)} / ${formatTime(currentSong.duration)}`;
+      document.querySelector(".circle").style.left =
+        (currentSong.currentTime / currentSong.duration) * 100 + "%";
+    }
+  });
 
+  // add a event lister for seekbar move
+  document.querySelector(".seekbar").addEventListener("click", (e) => {
+    const percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
 
+    document.querySelector(".circle").style.left = percent + "%";
+    currentSong.currentTime = (currentSong.duration * percent) / 100
+    });
 }
 
 main();
