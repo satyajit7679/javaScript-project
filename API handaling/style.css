@@ -1,0 +1,84 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+.container h2 {
+    margin-bottom: 15px;
+}
+
+/* Input section */
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    margin: 14px;
+}
+
+.input-container button {
+    padding: 8px 10px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background: #45a049;
+}
+
+/* Weather info */
+.weatherInfo {
+    margin-top: 15px;
+}
+
+.weatherInfo h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.weatherInfo p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Error message */
+#errorMassege {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
