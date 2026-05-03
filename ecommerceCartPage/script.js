@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   checkoutBtn.addEventListener("click", () => {
     cart.length = 0; // clear cart array
     alert("checkout sucessfully");
-
+    saveCartItem()
     randarCart(); // update UI
   });
 

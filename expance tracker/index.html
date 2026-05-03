@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanse Tracker App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Expanse Tracker</h2>
+      <form id="expanse-form">
+        <input
+          type="text"
+          id="expanse-name"
+          placeholder="Expanse Name"
+          required
+        />
+        <input
+          type="number"
+          id="expanse-amount"
+          placeholder="Enter expanse amount"
+          required
+        />
+        <button id="add-expanse-btn">Add expanse</button>
+      </form>
+      <h2>expanses</h2>
+      <ul id="expanse-list"></ul>
+    </div>
+    <div id="total">
+        <h3>Total amount : $<span id="total-amount">0.00</span>
+        </h3>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
